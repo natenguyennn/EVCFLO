@@ -34,7 +34,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Bahnschrift", sans-serif;
+  font-family: 'Bahnschrift', sans-serif;
   background: var(--white-clr);
   color: var(--heading-clr);
   line-height: 1.5;
@@ -119,6 +119,27 @@ p {
   color: var(--prime-clr-1);
   background: var(--prime-clr-5);
 }
+/*center text*/
+.centerText {
+  text-align: center;
+}
+/*center element display*/
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*table style*/
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th,
+td {
+  background-color: #96d4d4;
+}
 /* section  */
 .section {
   padding: 5rem 0;
@@ -169,7 +190,7 @@ About Component
 }
 @media screen and (min-width: 1170px) {
   .about-img::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -247,7 +268,24 @@ Navbar
 .nav-logo {
   height: 45px;
 }
+.nav-logo2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  height: auto;
+}
 
+button.nav-link {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-align: inherit;
+  text-decoration: none; /* Add this line to remove underline */
+}
 .nav-link {
   display: block;
   padding: 1rem 2rem;
@@ -288,7 +326,8 @@ Navbar
   }
 
   .navbar {
-    position: fixed;
+    /* commented this out as it is a hinderance to other pages (the need to add margins at the top of every page)  */
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
@@ -313,7 +352,7 @@ Navbar
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
   .nav-header {
     padding: 0 0;
@@ -328,6 +367,7 @@ Navbar
   }
   .nav-icons {
     display: flex;
+    margin-right: -50px;
   }
 
   .links-container {
@@ -358,8 +398,7 @@ Hero Component
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(7, 62, 28, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./images/main.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(7, 62, 28, 0.7), rgba(0, 0, 0, 0.7)), url('./images/main.jpg') center/cover no-repeat;
 }
 .hero-banner {
   text-align: center;
@@ -379,7 +418,7 @@ Hero Component
 @media screen and (min-width: 768px) {
   .hero {
     background: linear-gradient(rgb(7, 62, 28, 0.7), rgba(0, 0, 0, 0.7)),
-      url("./images/main.jpg") center/cover no-repeat;
+      url('./images/main.jpg') center/cover no-repeat;
   }
   .hero-banner {
     padding: 0;
@@ -388,6 +427,9 @@ Hero Component
     max-width: 45rem;
   }
 }
+/*
+Map Component
+*/
 
 #map {
   /* Setup the size of the map */
@@ -399,6 +441,445 @@ Hero Component
   #map {
     height: 600px;
     width: 100%;
-    margin-top: 63px;
+    margin-top: 0px;
+  }
+}
+
+.infowindow-container {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.infowindow-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.infowindow-content span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.infowindow-content span:first-child {
+  margin-top: 5px;
+}
+
+/*
+AI Page
+*/
+
+.aiModels {
+  margin-top: 100px;
+}
+
+/*
+NewBoundary, NewStation and SuggestStation forms
+*/
+
+.datapage {
+  height: 1900px;
+}
+
+@media screen and (min-width: 1025px) {
+  .datapage {
+    margin-top: 70px;
+    height: 1000px;
+    width: 100%;
+  }
+}
+#evcontentleft {
+  float: left;
+  width: 55%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #a4cfec49;
+  padding: 20px;
+  margin-left: 6%;
+}
+#suggest {
+  float: left;
+  width: 30%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #a4cfec49;
+  padding: 20px;
+}
+#boundary {
+  float: left;
+  width: 30%;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #a4cfec49;
+  padding: 20px;
+}
+#newstation {
+  float: left;
+  width: 30%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #2144ad1a;
+  padding: 20px;
+}
+#evcontentright {
+  float: left;
+  width: 30%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #2144ad1a;
+  padding: 20px;
+}
+/*
+AI Page
+*/
+
+.aiModels {
+  margin-top: 100px;
+}
+
+/*
+NewBoundary, NewStation and SuggestStation forms
+*/
+
+.datapage {
+  height: 1900px;
+}
+
+@media screen and (min-width: 1025px) {
+  .datapage {
+    margin-top: 90px;
+    height: 1000px;
+    width: 100%;
+  }
+}
+
+#suggest {
+  float: left;
+  width: 30%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #a4cfec49;
+  padding: 20px;
+}
+#boundary {
+  float: left;
+  width: 30%;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #a4cfec49;
+  padding: 20px;
+}
+#newstation {
+  float: left;
+  width: 30%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #2144ad1a;
+  padding: 20px;
+}
+
+/*
+Questions Component
+*/
+
+.faq {
+  margin-top: 90px;
+}
+
+.collapsible .content {
+  padding: 6px;
+  background-color: rgb(240, 240, 240);
+  font-size: 14px;
+}
+.collapsible .header {
+  background-color: rgb(200, 200, 200);
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(220, 220, 220);
+}
+.collapsible .header .title {
+  font-weight: 400;
+}
+.preferences label {
+  display: block;
+  padding-bottom: 4px;
+}
+
+/*
+Login Page
+*/
+
+.loginpage {
+  margin-top: 0px;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  background-color: var(--prime-clr-4);
+  color: var(--white-clr);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+.login-label {
+  margin-bottom: 0.5rem;
+}
+.login-form input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  color: var(--heading-clr);
+  width: 100%;
+}
+.login-btn {
+  margin-top: 1rem;
+  background-color: var(--prime-clr-2);
+  color: var(--white-clr);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.login-btn:hover {
+  background-color: var(--prime-clr-5);
+  color: var(--prime-clr-1);
+}
+.login-error {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.login-success {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/*
+user page
+*/
+
+.user-profile {
+  height: auto;
+  margin-top: 100px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--prime-clr-5);
+  border-radius: 1rem;
+  box-shadow: var(--dark-shadow);
+}
+
+.user-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid var(--prime-clr-4);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info h2 {
+  font-size: 2rem;
+  color: var(--heading-clr);
+  margin-bottom: var(--spacing);
+}
+
+.user-info p {
+  font-size: 1.2rem;
+  color: var(--paragraph-clr);
+}
+
+.verified-badge {
+  color: var(--prime-clr-1);
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/*
+news page
+*/
+
+#ev_news {
+  float: left;
+  width: 90%;
+  margin-right: 10px;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  border-radius: 25px;
+  background: #a4cfec49;
+  padding: 20px;
+  margin-left: 6%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  margin: 2em 0;
+  font-size: 4em;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 1em;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  background: #eee;
+  border-radius: 3em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu .inactive {
+  background: #eee;
+}
+
+.menu .active {
+  background: #ccc;
+}
+
+.menu .active:hover {
+  background: #aeaeae;
+}
+
+.menu .inactive:hover {
+  background: #dddddd;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  justify-content: center;
+  justify-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5em;
+}
+
+.article {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 25em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+  padding-bottom: 0.5em;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.article:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.article-content {
+  padding: 0.5em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+  flex-grow: 1;
+}
+
+.article-source {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.article-image {
+  overflow: hidden;
+  margin-bottom: 0.5em;
+  position: relative;
+  height: 15em;
+}
+
+.article-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  transition: 0.7s ease-in-out;
+}
+
+.article:hover .article-image img {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.article p {
+  line-height: 25px;
+  color: #555;
+}
+
+@media screen and (max-width: 1330px) {
+  html {
+    font-size: 14px;
+  }
+  .news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
   }
 }
